@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface ExperienceItem {
   role: string;
@@ -12,7 +13,7 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
-    role: "Intern Software Developer QA Tester | Innovation Technology",
+    role: "Intern Software Developer & QA Tester | Innovation Technology",
     company: "SP Madrid & Associates",
     date: "Oct 2024 – Dec 2024",
     location: "PITX Parañaque City",
@@ -52,23 +53,39 @@ export default function Experience() {
   };
 
   return (
-    <section className="max-w- 3xl mx-auto pt-8 pb-14">
-      <h2 className="pb-8">Experience</h2>
+    <section className="mb-[5rem] max-w-3xl text-justify  mx-auto pt-8  px-4">
+      <h2 className="text-2xl font-bold pb-8">Experience</h2>
 
       <div className="space-y-8">
         {experiences.map((exp, index) => {
           const isExpanded = expanded === index;
-          const visibleDescription = isExpanded
-            ? exp.description
-            : exp.description.slice(0, 2);
 
           return (
-            <div key={index} className="  flex gap-4">
+            <motion.div
+              key={index}
+              className="flex gap-4"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: false }}
+            >
               {/* Timeline */}
               <div className="flex flex-col items-center">
-                <div className="w-3 h-3 bg-gray-600 rounded-full"></div>
+                <motion.div
+                  className="w-3 h-3 bg-gray-600 rounded-full"
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 0.4 }}
+                  viewport={{ once: false }}
+                />
                 {index !== experiences.length - 1 && (
-                  <div className="w-[2px] bg-gray-300 flex-1"></div>
+                  <motion.div
+                    className="w-[2px] bg-gray-300 flex-1"
+                    initial={{ height: 0 }}
+                    whileInView={{ height: "100%" }}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    viewport={{ once: false }}
+                  />
                 )}
               </div>
 
@@ -82,13 +99,26 @@ export default function Experience() {
                 <p className="mt-2 text-sm text-gray-600">{exp.techStack}</p>
 
                 <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
-                  {visibleDescription.map((point, i) => (
-                    <li key={i}>{point}</li>
-                  ))}
+                  <AnimatePresence>
+                    {(isExpanded
+                      ? exp.description
+                      : exp.description.slice(0, 1)
+                    ).map((point, i) => (
+                      <motion.li
+                        key={i}
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: -20 }}
+                        transition={{ duration: 0.4, delay: i * 0.1 }}
+                      >
+                        {point}
+                      </motion.li>
+                    ))}
+                  </AnimatePresence>
                 </ul>
 
                 {/* See more / less */}
-                {exp.description.length > 2 && (
+                {exp.description.length > 1 && (
                   <button
                     onClick={() => toggleExpand(index)}
                     className="mt-2 text-gray-600 hover:underline text-sm font-medium"
@@ -97,7 +127,7 @@ export default function Experience() {
                   </button>
                 )}
               </div>
-            </div>
+            </motion.div>
           );
         })}
       </div>

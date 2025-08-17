@@ -1,78 +1,119 @@
+"use client";
 import React from "react";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <div>
-      <div className="grid h-screen  grid-cols-3 grid-rows-5 gap-7">
-        <div className="col-span-2   row-span-3 row-start-2">
-          <div className="">About</div>
-          <div className="flex mt-7 items-center gap-2">
+    <div className="bg-white  mb-[5rem] px-4 py-8 text-black">
+      {/* Wrapper Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        {/* Main Content */}
+        <motion.div
+          className="md:col-span-2"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          <h2 className="text-lg font-bold border-b border-gray-300 pb-2 mb-6">
+            About
+          </h2>
+
+          <motion.div
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+            viewport={{ once: false, amount: 0.2 }}
+          >
             <img
               src="https://media.licdn.com/dms/image/v2/D5603AQF40U_E-6fU2Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682683941506?e=1758153600&v=beta&t=b_Q-2Mb5cz6npatcH2b-VFZ4xl4_8E2aRM9ynMdhCpY"
-              alt=""
-              className=" rounded-full h-[5rem]"
+              alt="Profile"
+              className="rounded-full h-20 w-20 object-cover"
             />
             <div>
-              <div className="pl-2 text-2xl">Hi, I'm John Emmanuel Marco</div>
-              <div className=" pl-2 text-[10px]">22 Yesrs Old</div>
+              <div className="text-xl font-semibold">
+                Hi, I'm John Emmanuel Marco
+              </div>
+              <div className="text-xs text-gray-600">22 Years Old</div>
             </div>
-          </div>
-          <div className="py-3  text-gray-600 flex flex-col gap-6 text-[15px]">
-            <div className="">
+          </motion.div>
+
+          <motion.div
+            className="py-6 text-gray-700 text-justify pr-5 flex flex-col gap-6 text-sm leading-relaxed"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: false, amount: 0.2 }}
+          >
+            <p>
               I’m a Software Developer skilled in full-stack, real-time systems,
-              and AI. Built an ALPR system boosting detection by 40% and a
-              WebRTC tool cutting feedback by 50%.
-            </div>
-            <div>
+              and AI integration.
+            </p>
+            <p>
               Proficient in Python, JavaScript, TypeScript, React, Node.js,
               WebRTC, and Hugging Face. Improved mobile engagement by 25% and
               reduced defects by 35%.
-            </div>
-            <div>
+            </p>
+            <p>
               Passionate about building efficient, user-friendly solutions that
               drive growth. Skilled in databases, SEO, and networks, blending
               innovation with practicality.
-            </div>
-          </div>
-        </div>
-        <div className="row-span-3   col-start-3 row-start-2">
-          <div className="pb-12">Quotes</div>
-          <div className="flex flex-col ">
-            <div className="mb-2.5">
-              <div className="text-[12px] text-gray-600">
-                Coding like poetry should be short and concise
-              </div>
-              <div className="text-end text-[10px]">– Santosh Kalwar</div>
-            </div>
+            </p>
+          </motion.div>
+        </motion.div>
 
-            <div className="mb-2.5">
-              <div className="text-[12px] text-gray-600">
-                It’s not a bug; it’s an undocumented feature.
-              </div>
-              <div className="text-end text-[10px]">– Anonymous</div>
-            </div>
-            <div className="mb-2.5">
-              <div className="text-[12px] text-gray-600">
-                First, solve the problem. Then, write the code.
-              </div>
-              <div className="text-end  text-[10px]">– John Johnson</div>
-            </div>
-            <div className="mb-2.5">
-              <div className="text-[12px] text-gray-600">
-                Clean code always looks like it was written by someone who
-                cares.
-              </div>
-              <div className="text-end  text-[10px]">– Robert C. Martin</div>
-            </div>
-            <div className="mb-2.5">
-              <div className="text-gray-600 text-[12px]">
-                Most good programmers do programming not because they expect to
-                get paid, but because it is fun to program.
-              </div>
-              <div className="text-end  text-[10px]">– Linus Torvalds</div>
-            </div>
+        {/* Sidebar */}
+        <motion.div
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
+          viewport={{ once: false, amount: 0.2 }}
+        >
+          <h2 className="text-lg font-bold border-b border-gray-300 pb-2 mb-10">
+            Quotes
+          </h2>
+          <div className="flex flex-col gap-4">
+            {[
+              {
+                quote: "Coding like poetry should be short and concise",
+                author: "Santosh Kalwar",
+              },
+              {
+                quote: "It’s not a bug; it’s an undocumented feature.",
+                author: "Anonymous",
+              },
+              {
+                quote: "First, solve the problem. Then, write the code.",
+                author: "John Johnson",
+              },
+              {
+                quote:
+                  "Clean code always looks like it was written by someone who cares.",
+                author: "Robert C. Martin",
+              },
+              {
+                quote:
+                  "Most good programmers do programming not because they expect to get paid, but because it is fun to program.",
+                author: "Linus Torvalds",
+              },
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                className="text-xs text-justify"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: i * 0.2 }}
+                viewport={{ once: false, amount: 0.2 }}
+              >
+                <div className="text-gray-600">"{item.quote}"</div>
+                <div className="text-end text-[11px] text-gray-500">
+                  – {item.author}
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
