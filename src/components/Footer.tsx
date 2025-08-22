@@ -44,7 +44,7 @@ export default function Footer() {
   return (
     <motion.footer
       id="contact"
-      className="h-[40rem] flex flex-col gap-6 justify-center items-center px-6 text-center"
+      className=" max-w-6xl mx-auto h-[40rem] flex flex-col gap-6 justify-center items-center px-6 text-center"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}
@@ -63,20 +63,22 @@ export default function Footer() {
         variants={fadeScaleUp}
         className="text-lg md:text-2xl text-gray-700 max-w-2xl"
       >
-        Have something in mind? Feel free to DM me on Instagram or drop me an
-        email, I’d love to hear from you!
+        Got an idea brewing? 💡 Let’s turn it into something awesome together.
+        Drop me an email — whether it’s a project, a collab, or just to say hi!
       </motion.p>
 
-      {/* Details (Example: Icons or Location) */}
+      {/* Contact details */}
       <motion.div
         variants={fadeSlideLeft}
         className="flex flex-col md:flex-row gap-4 mt-6 text-gray-600"
       >
         <span className="text-base md:text-lg">📍 Manila, Philippines</span>
-        <span className="text-base md:text-lg">
+        <a
+          href="mailto:ty.johnemmanuel@gmail.com"
+          className="text-base md:text-lg hover:text-blue-600 transition-colors"
+        >
           ✉️ ty.johnemmanuel@gmail.com
-        </span>
-        <span className="text-base md:text-lg">📱 @juan___emmanuel</span>
+        </a>
       </motion.div>
     </motion.footer>
   );

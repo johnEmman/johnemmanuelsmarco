@@ -44,24 +44,30 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="py-6 text-gray-700 text-justify pr-5 flex flex-col gap-6 leading-relaxed"
+            className="py-6 text-gray-700 text-justify pr-5 flex flex-col gap-3 leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: false, amount: 0.2 }}
           >
             <p>
-              I&apos;m a Software Developer skilled in full-stack, real-time
-              systems, and AI integration.
+              I&apos;m a passionate Software Developer who enjoys bringing ideas
+              to life through technology. My focus is on building applications
+              that are not only functional but also meaningful and
+              user-friendly.
             </p>
             <p>
-              Proficient in Python, JavaScript, TypeScript, React, Node.js,
-              WebRTC, and Hugging Face.
+              I specialize in full-stack development, real-time systems, and AI
+              integration, with hands-on experience in Python, JavaScript,
+              TypeScript, React, Node.js, and WebRTC. I love exploring how these
+              tools can work together to create smooth, impactful digital
+              experiences.
             </p>
             <p>
-              Passionate about building efficient, user-friendly solutions that
-              drive growth. Skilled in databases, SEO, and networks, blending
-              innovation with practicality.
+              Beyond coding, I’m always eager to learn, collaborate, and share
+              ideas. I believe the best projects come from teamwork, creativity,
+              and a drive to solve real problems with practical, innovative
+              solutions.
             </p>
           </motion.div>
         </motion.div>

@@ -60,7 +60,7 @@ export default function Education() {
   return (
     <motion.section
       id="education"
-      className="max-w-4xl mx-auto px-6 pt-8"
+      className="max-w-6xl mx-auto px-6 pt-8"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}

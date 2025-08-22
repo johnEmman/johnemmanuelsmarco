@@ -82,7 +82,7 @@ export default function Projects() {
   return (
     <motion.section
       id="projects"
-      className="max-w-5xl mx-auto px-6 pt-8"
+      className="max-w-6xl mx-auto px-6 pt-8"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}

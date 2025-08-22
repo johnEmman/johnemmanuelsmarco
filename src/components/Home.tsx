@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="bg-white  mb-4  ">
+    <div className="bg-white max-w-6xl mx-auto  mb-4  ">
       <div className="pt-[5rem]">
         <div className="">
           {/* Name with fade + slide down */}
