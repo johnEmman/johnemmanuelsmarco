@@ -73,8 +73,10 @@ export default function Footer() {
         className="flex flex-col md:flex-row gap-4 mt-6 text-gray-600"
       >
         <span className="text-base md:text-lg">📍 Manila, Philippines</span>
-        <span className="text-base md:text-lg">✉️ your.email@example.com</span>
-        <span className="text-base md:text-lg">📱 @yourInstagram</span>
+        <span className="text-base md:text-lg">
+          ✉️ ty.johnemmanuel@gmail.com
+        </span>
+        <span className="text-base md:text-lg">📱 @juan___emmanuel</span>
       </motion.div>
     </motion.footer>
   );
