@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 export default function About() {
@@ -26,11 +27,14 @@ export default function About() {
             transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
             viewport={{ once: false, amount: 0.2 }}
           >
-            <img
+            <Image
               src="https://media.licdn.com/dms/image/v2/D5603AQF40U_E-6fU2Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682683941506?e=1758153600&v=beta&t=b_Q-2Mb5cz6npatcH2b-VFZ4xl4_8E2aRM9ynMdhCpY"
               alt="Profile"
-              className="rounded-full h-20 w-20 object-cover"
+              width={80} // required
+              height={80} // required
+              className="rounded-full object-cover"
             />
+
             <div>
               <div className="text-xl font-semibold">
                 Hi, I'm John Emmanuel Marco
