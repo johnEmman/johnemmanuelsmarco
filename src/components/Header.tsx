@@ -19,7 +19,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              href="https://www.linkedin.com/in/your-profile"
+              href="https://www.linkedin.com/in/john-emmanuel-marco-ba7558274/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -29,7 +29,7 @@ export default function Header() {
           </li>
           <li>
             <Link
-              href="https://github.com/your-username"
+              href="https://github.com/johnEmman"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
