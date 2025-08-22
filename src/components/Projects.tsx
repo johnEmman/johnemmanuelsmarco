@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { motion, Variants } from "framer-motion";
 
 interface ProjectItem {
   name: string;
@@ -46,6 +47,31 @@ const projects: ProjectItem[] = [
   },
 ];
 
+// --- Framer Motion Variants ---
+const container: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.3 } },
+};
+
+const fadeSlideDown: Variants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
+const fadeScaleUp: Variants = {
+  hidden: { opacity: 0, scale: 0.95 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" },
+  },
+};
+
+const fadeSlideLeft: Variants = {
+  hidden: { opacity: 0, x: -30 },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: "easeOut" } },
+};
+
 export default function Projects() {
   const [expanded, setExpanded] = useState<number | null>(null);
 
@@ -54,58 +80,107 @@ export default function Projects() {
   };
 
   return (
-    <section className="max-w-6xl mx-auto py-8">
-      <h2 className="text-2xl font-bold mb-6 flex items-center gap-2">
+    <motion.section
+      id="projects"
+      className="max-w-5xl mx-auto px-6 pt-8"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
+      variants={container}
+    >
+      {/* Heading */}
+      <motion.h2
+        variants={fadeSlideDown}
+        className="text-lg   border-b border-gray-300 pb-2 mb-6  font-bold  text-gray-900 "
+      >
         Projects
-      </h2>
+      </motion.h2>
 
-      <div className="flex flex-col gap-6">
+      {/* Projects List */}
+      <motion.div variants={container} className="space-y-6">
         {projects.map((project, index) => {
           const isExpanded = expanded === index;
-          const visibleDescription = isExpanded
-            ? project.description
-            : project.description.slice(0, 2);
 
           return (
-            <div
+            <motion.div
               key={index}
-              className="bg-white shadow-lg rounded-xl p-5 border border-gray-200 hover:shadow-xl transition-shadow duration-200"
+              variants={fadeScaleUp}
+              className="p-5 rounded-lg shadow-md bg-gray-50 hover:shadow-lg transition"
             >
-              <h3 className="text-lg font-semibold">{project.name}</h3>
-              <p className="text-sm text-gray-500">{project.date}</p>
-              <p className="mt-2 text-sm text-gray-600">{project.techStack}</p>
+              {/* Project Name */}
+              <motion.h3
+                variants={fadeSlideLeft}
+                className="font-semibold text-lg md:text-xl"
+              >
+                {project.name}
+              </motion.h3>
 
-              <ul className="mt-3 list-disc pl-5 text-gray-700 space-y-1">
-                {visibleDescription.map((point, i) => (
-                  <li key={i}>{point}</li>
-                ))}
-              </ul>
+              {/* Date */}
+              <motion.p
+                variants={fadeSlideLeft}
+                className="text-sm text-gray-500"
+              >
+                {project.date}
+              </motion.p>
 
-              {project.description.length > 2 && (
-                <button
+              {/* Tech Stack */}
+              <motion.p
+                variants={fadeSlideLeft}
+                className="mt-2 text-sm text-gray-600"
+              >
+                {project.techStack}
+              </motion.p>
+
+              {/* Expandable content */}
+              {isExpanded && (
+                <>
+                  {/* Description */}
+                  <motion.ul
+                    initial="hidden"
+                    animate="visible"
+                    variants={container}
+                    className="mt-3 list-disc pl-5 text-gray-700 space-y-1"
+                  >
+                    {project.description.map((point, i) => (
+                      <motion.li key={i} variants={fadeSlideLeft}>
+                        {point}
+                      </motion.li>
+                    ))}
+                  </motion.ul>
+                </>
+              )}
+              <div className="flex items-center gap-3">
+                <motion.button
                   onClick={() => toggleExpand(index)}
                   className="mt-2 text-blue-600 hover:underline text-sm font-medium"
+                  variants={fadeSlideLeft}
                 >
                   {isExpanded ? "See less" : "See more"}
-                </button>
-              )}
-
-              {project.link && (
-                <div className="mt-3">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition-colors"
+                </motion.button>
+                {/* Project Link */}
+                {project.link && (
+                  <motion.div
+                    initial="hidden"
+                    animate="visible"
+                    variants={fadeSlideLeft}
+                    className="mt-3"
                   >
-                    View Project
-                  </a>
-                </div>
-              )}
-            </div>
+                    <a
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-block text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition"
+                    >
+                      View Project
+                    </a>
+                  </motion.div>
+                )}
+              </div>
+              {/* Expand Button (always visible) */}
+            </motion.div>
           );
         })}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

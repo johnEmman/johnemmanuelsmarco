@@ -5,9 +5,9 @@ import { motion } from "framer-motion";
 
 export default function Home() {
   return (
-    <div className="bg-white pt-[10rem] ">
-      <div className="grid grid-cols-3 grid-rows-5 gap-4">
-        <div className="col-span-3 row-span-2 row-start-4 flex flex-col gap-2">
+    <div className="bg-white  mb-4  ">
+      <div className="pt-[5rem]">
+        <div className="">
           {/* Name with fade + slide down */}
           <motion.div
             className="text-3xl md:text-5xl font-bold"
@@ -16,7 +16,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: false }}
           >
-            EJ S. Marco
+            John Emmanuel S. Marco
           </motion.div>
 
           {/* Title with fade + slight scale */}
@@ -27,7 +27,17 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: false }}
           >
-            Full-Stack Developer | Computer Science Graduate
+            Full-Stack Developer | QA Tester | AI-Powered Web Solutions &
+            Automation
+          </motion.div>
+          <motion.div
+            className="text-sm md:text-md"
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            viewport={{ once: false }}
+          >
+            Enabling businesses to innovate and scale efficiently
           </motion.div>
 
           {/* Location with fade + slide from left */}

@@ -1,85 +1,43 @@
 "use client";
 import { useState } from "react";
-import { Menu, X } from "lucide-react"; // hamburger + close icons
+import { HiOutlineHome } from "react-icons/hi";
+import { TbBrandLinkedin } from "react-icons/tb";
+import { BsGithub } from "react-icons/bs";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <header className="sticky top-0 bg-white shadow-md z-50">
-        <nav className="flex justify-between items-center px-6 py-4">
-          {/* Logo / Brand */}
-          <div className="text-xl font-bold">Hello, World</div>
-
-          {/* Desktop Nav */}
-          <div className="hidden md:flex space-x-8 font-semibold">
-            <a href="#home" className="hover:text-blue-600 transition-colors">
-              Home
+      <header className="fixed bottom-20 left-1/2 -translate-x-1/2 bg-white z-50 px-6 py-4 rounded-md shadow-md">
+        <ul className="flex gap-6 text-2xl font-bold">
+          <li>
+            <a href="/" aria-label="Home">
+              <HiOutlineHome className="hover:text-blue-500 transition-colors" />
             </a>
-            <a href="#about" className="hover:text-blue-600 transition-colors">
-              About
-            </a>
+          </li>
+          <li>
             <a
-              href="#experience"
-              className="hover:text-blue-600 transition-colors"
+              href="https://www.linkedin.com/in/your-profile"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
             >
-              Experience
+              <TbBrandLinkedin className="hover:text-blue-600 transition-colors" />
             </a>
+          </li>
+          <li>
             <a
-              href="#projects"
-              className="hover:text-blue-600 transition-colors"
+              href="https://github.com/your-username"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
             >
-              Projects
+              <BsGithub className="hover:text-gray-700 transition-colors" />
             </a>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100"
-            onClick={() => setIsOpen(!isOpen)}
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </nav>
-
-        {/* Mobile Dropdown */}
-        {isOpen && (
-          <div className="md:hidden flex flex-col items-center space-y-4 py-4 bg-white shadow-md font-semibold">
-            <a
-              href="#home"
-              className="hover:text-blue-600 transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              className="hover:text-blue-600 transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </a>
-            <a
-              href="#experience"
-              className="hover:text-blue-600 transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Experience
-            </a>
-            <a
-              href="#projects"
-              className="hover:text-blue-600 transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Projects
-            </a>
-          </div>
-        )}
+          </li>
+        </ul>
       </header>
-
-      {/* Spacer so sticky doesn't overlap */}
-      <div className="h-[5rem]" />
     </>
   );
 }

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <div className="bg-white  mb-[5rem] px-4 py-8 text-black">
+    <div className="bg-white   px-4  text-black">
       {/* Wrapper Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {/* Main Content */}
@@ -12,8 +12,8 @@ export default function About() {
           className="md:col-span-2"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          viewport={{ once: false, amount: 0.2 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.1 }}
         >
           <h2 className="text-lg font-bold border-b border-gray-300 pb-2 mb-6">
             About
@@ -40,7 +40,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="py-6 text-gray-700 text-justify pr-5 flex flex-col gap-6 text-sm leading-relaxed"
+            className="py-6 text-gray-700 text-justify pr-5 flex flex-col gap-6  leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -52,8 +52,7 @@ export default function About() {
             </p>
             <p>
               Proficient in Python, JavaScript, TypeScript, React, Node.js,
-              WebRTC, and Hugging Face. Improved mobile engagement by 25% and
-              reduced defects by 35%.
+              WebRTC, and Hugging Face.
             </p>
             <p>
               Passionate about building efficient, user-friendly solutions that
@@ -100,7 +99,7 @@ export default function About() {
             ].map((item, i) => (
               <motion.div
                 key={i}
-                className="text-xs text-justify"
+                className="text-sm text-justify"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: i * 0.2 }}
