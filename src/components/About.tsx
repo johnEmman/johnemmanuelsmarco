@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export default function About() {
   return (
-    <div className="bg-white   px-4  text-black">
+    <div className="bg-white px-4 text-black">
       {/* Wrapper Grid */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
         {/* Main Content */}
@@ -30,29 +30,29 @@ export default function About() {
             <Image
               src="https://media.licdn.com/dms/image/v2/D5603AQF40U_E-6fU2Q/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1682683941506?e=1758153600&v=beta&t=b_Q-2Mb5cz6npatcH2b-VFZ4xl4_8E2aRM9ynMdhCpY"
               alt="Profile"
-              width={80} // required
-              height={80} // required
+              width={80}
+              height={80}
               className="rounded-full object-cover"
             />
 
             <div>
               <div className="text-xl font-semibold">
-                Hi, I'm John Emmanuel Marco
+                Hi, I&apos;m John Emmanuel Marco
               </div>
               <div className="text-xs text-gray-600">22 Years Old</div>
             </div>
           </motion.div>
 
           <motion.div
-            className="py-6 text-gray-700 text-justify pr-5 flex flex-col gap-6  leading-relaxed"
+            className="py-6 text-gray-700 text-justify pr-5 flex flex-col gap-6 leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: false, amount: 0.2 }}
           >
             <p>
-              I’m a Software Developer skilled in full-stack, real-time systems,
-              and AI integration.
+              I&apos;m a Software Developer skilled in full-stack, real-time
+              systems, and AI integration.
             </p>
             <p>
               Proficient in Python, JavaScript, TypeScript, React, Node.js,
@@ -83,7 +83,8 @@ export default function About() {
                 author: "Santosh Kalwar",
               },
               {
-                quote: "It’s not a bug; it’s an undocumented feature.",
+                quote:
+                  "It&apos;s not a bug; it&apos;s an undocumented feature.",
                 author: "Anonymous",
               },
               {
@@ -109,7 +110,7 @@ export default function About() {
                 transition={{ duration: 0.5, delay: i * 0.2 }}
                 viewport={{ once: false, amount: 0.2 }}
               >
-                <div className="text-gray-600">"{item.quote}"</div>
+                <div className="text-gray-600">&quot;{item.quote}&quot;</div>
                 <div className="text-end text-[11px] text-gray-500">
                   – {item.author}
                 </div>
