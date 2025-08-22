@@ -3,6 +3,7 @@ import { useState } from "react";
 import { HiOutlineHome } from "react-icons/hi";
 import { TbBrandLinkedin } from "react-icons/tb";
 import { BsGithub } from "react-icons/bs";
+import { TbFileCv } from "react-icons/tb";
 import Link from "next/link";
 
 export default function Header() {
@@ -35,6 +36,17 @@ export default function Header() {
               aria-label="GitHub"
             >
               <BsGithub className="hover:text-gray-700 transition-colors" />
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/cv/Marco_John_Emmanuel_S_cv.docx"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              aria-label="Download CV"
+            >
+              <TbFileCv className="hover:text-blue-600 transition-colors" />
             </Link>
           </li>
         </ul>
