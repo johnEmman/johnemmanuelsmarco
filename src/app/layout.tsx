@@ -13,9 +13,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "EJ_Portfolio",
+  title: "Portfolio",
   description:
     "Portfolio of John Emmanuel S. Marco — Full-Stack Developer & QA Tester specializing in AI-powered web solutions, automation, and real-time applications.",
+  openGraph: {
+    title: "John Emmanuel Marco - Portfolio",
+    description:
+      "Portfolio of John Emmanuel S. Marco — Full-Stack Developer & QA Tester specializing in AI-powered web solutions, automation, and real-time applications.",
+    url: "",
+    siteName: "",
+    images: [
+      {
+        url: "https://media.licdn.com/dms/image/v2/D5603AQF40U_E-6fU2Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1682683941506?e=1758758400&v=beta&t=1ZqNjaKwVrmNCF2wFOXeUfL4DDkd3hzJQAgzuGCPstI", // put your image in /public/profile.jpg
+        width: 800,
+        height: 600,
+        alt: "John Emmanuel Marco Portfolio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
