@@ -16,6 +16,10 @@ export const metadata: Metadata = {
   title: "Portfolio",
   description:
     "Portfolio of John Emmanuel S. Marco — Full-Stack Developer & QA Tester specializing in AI-powered web solutions, automation, and real-time applications.",
+
+  icons: {
+    icon: "https://media.licdn.com/dms/image/v2/D5603AQF40U_E-6fU2Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1682683941506?e=1758758400&v=beta&t=1ZqNjaKwVrmNCF2wFOXeUfL4DDkd3hzJQAgzuGCPstI", // or .png
+  },
   openGraph: {
     title: "John Emmanuel Marco - Portfolio",
     description:
