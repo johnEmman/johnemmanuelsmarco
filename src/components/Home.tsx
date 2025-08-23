@@ -10,7 +10,7 @@ export default function Home() {
         <div className="">
           {/* Name with fade + slide down */}
           <motion.div
-            className="text-3xl mb-3 md:text-5xl font-bold"
+            className="text-4xl mb-3 md:text-5xl font-bold"
             initial={{ opacity: 0, y: -50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}

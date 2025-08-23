@@ -12,7 +12,7 @@ import "animate.css";
 export default function App() {
   return (
     <>
-      <main className="px-3 xl:px-80 text-gray-950 font-sans bg-[#FFFFFF]">
+      <main className="px-7 lg:px-80 text-gray-950 font-sans bg-[#FFFFFF]">
         <div id="home">
           <Home />
         </div>
