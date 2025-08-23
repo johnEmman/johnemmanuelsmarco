@@ -52,9 +52,7 @@ export default function About() {
           >
             <p>
               I&apos;m a passionate Software Developer who enjoys bringing ideas
-              to life through technology. My focus is on building applications
-              that are not only functional but also meaningful and
-              user-friendly.
+              to life through technology.
             </p>
             <p>
               I specialize in full-stack development, real-time systems, and AI

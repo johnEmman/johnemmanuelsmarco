@@ -75,12 +75,12 @@ export default function Education() {
       </motion.h2>
 
       {/* Education List */}
-      <motion.div variants={container} className="space-y-6">
+      <motion.div variants={container} className="space-y-1">
         {education.map((edu, index) => (
           <motion.div
             key={index}
             variants={fadeScaleUp}
-            className="flex items-center gap-4 p-4"
+            className="flex items-center gap-4 \ p-4"
           >
             {/* Image */}
             <motion.div

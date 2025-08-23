@@ -97,7 +97,7 @@ export default function Projects() {
       </motion.h2>
 
       {/* Projects List */}
-      <motion.div variants={container} className="space-y-6">
+      <motion.div variants={container} className="space-y-1">
         {projects.map((project, index) => {
           const isExpanded = expanded === index;
 

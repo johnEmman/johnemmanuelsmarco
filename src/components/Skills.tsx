@@ -139,7 +139,7 @@ export default function AnimatedSkills() {
   return (
     <motion.section
       id="skills"
-      className="pt-8  max-w-6xl mx-auto"
+      className="pt-8  max-w-6xl mx-auto px-6 "
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.1 }}
@@ -164,9 +164,9 @@ export default function AnimatedSkills() {
       {/* Skills mapped */}
       <motion.div variants={container} className="grid ">
         {skills.map((skillGroup, index) => (
-          <motion.div key={index} variants={fadeSlideLeft} className="p-5">
+          <motion.div key={index} variants={fadeSlideLeft} className="pl-3 p-1">
             {/* Category */}
-            <h3 className="font-semibold text-gray-900 mb-3 text-lg">
+            <h3 className="font-semibold text-gray-900 mb-1 text-lg">
               {skillGroup.category}
             </h3>
 
