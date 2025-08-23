@@ -23,14 +23,8 @@ const experiences: ExperienceItem[] = [
       "Python, TypeScript, Node.js, React, Express, Socket.io, PostgreSQL, Hugging Face, WebRTC, Postman",
     description: [
       "Developed a real-time speech-to-text transcription system with Transformers.js, cutting trainee feedback cycle by 50%.",
-      "Built a WebRTC peer-to-peer audio solution, streamlining communication workflows and reducing response time in role-play simulations by 40%.",
-      "Integrated Whisper, WebRTC, and PostgreSQL into a secure pipeline, boosting transcription accuracy and usability in training simulations.",
-      "Coordinated with AI engineers to integrate and fine-tune machine learning models for ALPR, ensuring accurate and efficient license plate recognition.",
       "Engineered and deployed a responsive UI for the ALPR system, reducing plate detection time by 40% and increasing operator throughput by 30%.",
-      "Labeled, cleaned, and organized 5,000+ images for AI training, improving model accuracy by 15%.",
       "Collaborated with developers and UI/UX designers to identify, track, and resolve 90% of high-severity defects prior to production release.",
-      "Served as the sole QA tester for the company’s website, performing functional, usability, regression, and cross-browser testing to achieve 100% release readiness.",
-      "Wrote and updated QA documentation including test plans, defect logs, and validation reports, accelerating bug resolution speed by 35%.",
     ],
   },
   {
@@ -83,7 +77,7 @@ export default function Experience() {
                   transition={{ duration: 0.2 }}
                   viewport={{ once: false }}
                 />
-                {index !== experiences.length - 1 && (
+                {index !== experiences.length - 0 && (
                   <motion.div
                     className="w-[2px] bg-gray-300 flex-1"
                     initial={{ height: 0 }}
@@ -97,7 +91,10 @@ export default function Experience() {
               {/* Content */}
               <div>
                 <div className="mb-2  flex justify-start items-start gap-3">
-                  <img src={`${exp.img}`} className="h-[4rem] rounded-full" />
+                  <img
+                    src={`${exp.img}`}
+                    className="md:h-12 h-[4rem] rounded-full"
+                  />
                   <div>
                     <h3 className="text-lg font-semibold">{exp.role}</h3>
                     <p className="text-gray-700 font-medium">{exp.company}</p>

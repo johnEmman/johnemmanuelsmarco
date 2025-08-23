@@ -44,7 +44,7 @@ export default function About() {
           </motion.div>
 
           <motion.div
-            className="py-6 text-gray-700 text-justify pr-5 flex flex-col gap-3 leading-relaxed"
+            className="py-6 text-gray-700 text-justify  flex flex-col gap-3 leading-relaxed"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -87,8 +87,7 @@ export default function About() {
                 author: "Santosh Kalwar",
               },
               {
-                quote:
-                  "It&apos;s not a bug; it&apos;s an undocumented feature.",
+                quote: `It's not a bug; it's an undocumented feature.`,
                 author: "Anonymous",
               },
               {

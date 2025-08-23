@@ -1,24 +1,17 @@
 "use client";
 import React from "react";
 import { motion, Variants } from "framer-motion";
-import Image from "next/image";
 
 const container: Variants = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.3, // stagger for sequential animations
-    },
+    transition: { staggerChildren: 0.2 },
   },
 };
 
 const fadeSlideDown: Variants = {
   hidden: { opacity: 0, y: -20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
 };
 
 const fadeScaleUp: Variants = {
@@ -26,15 +19,6 @@ const fadeScaleUp: Variants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.5, ease: "easeOut" },
-  },
-};
-
-const fadeSlideLeft: Variants = {
-  hidden: { opacity: 0, x: -30 },
-  visible: {
-    opacity: 1,
-    x: 0,
     transition: { duration: 0.5, ease: "easeOut" },
   },
 };
@@ -60,7 +44,7 @@ export default function Education() {
   return (
     <motion.section
       id="education"
-      className="max-w-6xl mx-auto px-6 pt-8"
+      className="max-w-6xl mx-auto px-4 py-10"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}
@@ -69,58 +53,44 @@ export default function Education() {
       {/* Heading */}
       <motion.h2
         variants={fadeSlideDown}
-        className="text-lg   border-b border-gray-300 pb-2 mb-6  font-bold  text-gray-900 "
+        className="text-lg font-bold border-b border-gray-300 pb-2 mb-6"
       >
         Education
       </motion.h2>
 
-      {/* Education List */}
-      <motion.div variants={container} className="space-y-1">
+      {/* Timeline */}
+      <div className="relative pl-5 flex flex-col gap-5">
         {education.map((edu, index) => (
-          <motion.div
-            key={index}
-            variants={fadeScaleUp}
-            className="flex items-center gap-4 \ p-4"
-          >
-            {/* Image */}
-            <motion.div
-              variants={fadeScaleUp}
-              className="w-16 h-16 flex-shrink-0"
-            >
-              <img
-                src={edu.img}
-                alt={edu.school}
-                width={64}
-                height={64}
-                className="rounded-full"
-              />
-            </motion.div>
+          <motion.div key={index} variants={fadeScaleUp} className="relative  ">
+            {/* Timeline Dot */}
+            {/* <span className="absolute -left-[10px] top-6 w-4 h-4 rounded-full bg-blue-500 border-2 border-white shadow"></span> */}
 
-            {/* Details */}
-            <motion.div
-              variants={fadeSlideLeft}
-              className="flex flex-col md:flex-row md:justify-between w-full"
-            >
-              {/* Left side */}
-              <div>
-                <h3 className="font-semibold text-lg md:text-xl">
-                  {edu.degree}
-                </h3>
-                <p className="italic text-gray-600">{edu.school}</p>
+            {/* Card */}
+            <div className="bg-white  rounded-lg py-6 px-2  transition">
+              <div className="flex items-start gap-3">
+                {/* Logo */}
+                <img
+                  src={edu.img}
+                  alt={edu.school}
+                  className="  md:h-12 h-[4rem] rounded-full object-cover"
+                />
+
+                {/* School Info */}
+                <div className="lg:flex justify-between w-full ">
+                  <div>
+                    <h3 className="font-semibold text-lg">{edu.degree}</h3>
+                    <p className="text-sm text-gray-600">{edu.school}</p>
+                  </div>
+                  <div>
+                    <p className="text-xs text-gray-500">{edu.location}</p>
+                    <p className="text-xs text-gray-500 italic">{edu.date}</p>
+                  </div>
+                </div>
               </div>
-
-              {/* Right side */}
-              <motion.div
-                variants={fadeSlideLeft}
-                className="text-sm md:text-base text-gray-700 mt-2 md:mt-0 flex flex-col items-start md:items-end"
-              >
-                {edu.location && <span>{edu.location}</span>}
-                <span className="italic">{edu.date}</span>
-              </motion.div>
-            </motion.div>
+            </div>
           </motion.div>
         ))}
-      </motion.div>
+      </div>
     </motion.section>
   );
 }
