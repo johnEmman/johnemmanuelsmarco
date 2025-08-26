@@ -123,7 +123,7 @@ export default function Projects() {
   return (
     <motion.section
       id="projects"
-      className="max-w-6xl mx-auto px-6 pt-8"
+      className="max-w-6xl  mx-auto px-6 pt-8"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}
@@ -162,7 +162,7 @@ export default function Projects() {
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-[10rem] object-cover hover:scale-105 transition-transform duration-500"
+                    className="w-full h-[12rem] object-cover hover:scale-105 transition-transform duration-500"
                   />
                 </motion.div>
               )}
