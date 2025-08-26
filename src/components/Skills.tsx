@@ -171,7 +171,7 @@ export default function AnimatedSkills() {
             </h3>
 
             {/* Skill pills */}
-            <ul className="flex flex-wrap gap-2 text-sm md:text-base text-gray-800">
+            <ul className="flex flex-wrap gap-2 text-xs md:text-sm text-gray-800">
               {skillGroup.items.map((item, i) => (
                 <li
                   key={i}
