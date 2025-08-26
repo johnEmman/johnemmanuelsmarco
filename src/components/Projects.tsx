@@ -34,7 +34,7 @@ const projects: ProjectItem[] = [
       "Integrated Whisper AI for high-accuracy transcription in real-time training environments.",
     ],
     link: "https://github.com/johnEmman/webrtc-client-server",
-    image: "/images/whisper.png",
+    image: "/img/roleplay.png",
   },
   {
     name: "Automatic License Plate Recognition (ALPR) System",
@@ -45,7 +45,7 @@ const projects: ProjectItem[] = [
       "Built a responsive UI for real-time plate detection, reducing detection time by 40%.",
       "Labeled and processed 5,000+ images for AI training, improving model accuracy by 15%.",
     ],
-    image: "/images/alpr.png",
+    image: "/img/alr.png",
   },
   {
     name: "Business Cost Calculator (Universal Pricing & Profit Tool)",
