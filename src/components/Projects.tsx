@@ -4,28 +4,40 @@ import { motion, Variants } from "framer-motion";
 
 interface ProjectItem {
   name: string;
-  date: string;
   techStack: string;
   description: string[];
   link?: string;
+  image?: string;
 }
 
 const projects: ProjectItem[] = [
   {
-    name: "Whisper WebGPU (Real-Time Transcription & Communication System)",
-    date: "Nov 2024",
+    name: "AMA Facial Recognition: Digital Record-logs Management System",
     techStack:
-      "TypeScript, React, Node.js, WebRTC, PostgreSQL, Transformers.js, Whisper AI",
+      "React, Node.js, Express.js, MySQL, Python, OpenCV, Machine Learning",
+    description: [
+      "Developed a digital record-logs system to replace manual logbooks at AMA Computer College.",
+      "Implemented facial recognition with OpenCV and ML models to automate log-in/log-out processes.",
+      "Designed a secure backend with Node.js and MySQL to store records and manage access.",
+      "Built an admin dashboard for monitoring, reporting, and record retrieval.",
+      "Improved accuracy, reduced record-keeping time, and enhanced security of student and staff logs.",
+    ],
+    image: "/img/capstone1.png",
+  },
+  {
+    name: "Whisper WebGPU (Real-Time Transcription & Communication System)",
+    techStack:
+      "TypeScript, React, Express, Node.js, WebRTC, PostgreSQL, Transformers.js, Whisper AI",
     description: [
       "Developed a real-time speech-to-text transcription system using Transformers.js, cutting trainee feedback cycle by 50%.",
       "Built WebRTC-based audio streaming for peer-to-peer role-play training simulations.",
       "Integrated Whisper AI for high-accuracy transcription in real-time training environments.",
     ],
-    link: "https://github.com/yourusername/whisper-webgpu",
+    link: "https://github.com/johnEmman/webrtc-client-server",
+    image: "/images/whisper.png",
   },
   {
     name: "Automatic License Plate Recognition (ALPR) System",
-    date: "Oct 2024",
     techStack:
       "React, Node.js, PostgreSQL, Machine Learning Models (Hugging Face)",
     description: [
@@ -33,17 +45,46 @@ const projects: ProjectItem[] = [
       "Built a responsive UI for real-time plate detection, reducing detection time by 40%.",
       "Labeled and processed 5,000+ images for AI training, improving model accuracy by 15%.",
     ],
+    image: "/images/alpr.png",
   },
   {
-    name: "Responsive Business Website",
-    date: "Jun 2023",
-    techStack: "HTML, CSS, JavaScript, jQuery, Bootstrap",
+    name: "Business Cost Calculator (Universal Pricing & Profit Tool)",
+    techStack: "React, TypeScript, TailwindCSS, Chart.js, CSV Export",
     description: [
-      "Developed a fully responsive business website compatible with mobile, tablet, and desktop.",
-      "Optimized for SEO and performance, improving page load speed by 30%.",
-      "Implemented cross-browser testing and fixed 20+ UI bugs.",
+      "Built a professional business cost calculator tailored for restaurants, bakeries, and food entrepreneurs.",
+      "Implemented VAT-registered business logic with automatic VAT-inclusive/exclusive pricing support.",
+      "Designed multiple pricing strategies with dynamic target profit margin (10–50%) calculations.",
+      "Added cost analysis module: unit cost breakdown, raw materials, labor, and overhead tracking.",
+      "Integrated discount calculator for common Philippine business scenarios (PWD/Senior Citizen, bulk, loyalty, and custom discounts).",
+      "Developed performance analysis tools including margin, markup, and profitability insights with real-time charts.",
+      "Enabled CSV export for business reports and financial tracking.",
     ],
-    link: "https://yourlivewebsite.com",
+    link: "https://biz-calc-hub.vercel.app/",
+    image: "/img/costCalc.png",
+  },
+  {
+    name: "Business Analytics Dashboard",
+    techStack: "React, Recharts, Chart.js, Prisma ORM,  TypeScript",
+    description: [
+      "Displays key financial and operational metrics",
+      "Interactive data visualization with charts",
+    ],
+    link: "https://tableau-tonic.vercel.app/",
+
+    image: "/img/datavisualpng.png",
+  },
+  {
+    name: "Backend API Docs",
+    techStack: " TypeScript, React, Tailwind",
+    description: [
+      "Built production-ready backend API documentation covering setup, database design, REST API endpoints, authentication, and deployment.",
+      "Implemented relational database schema with Prisma and MySQL, including ER diagrams and SQL optimization examples.",
+      "Developed Express.js REST APIs with JWT authentication, error handling, and OpenAPI 3.0 documentation.",
+      "Configured CI/CD pipeline, Docker deployment, and testing strategy with Vitest and Supertest.",
+      "Outlined security best practices and observability for monitoring in production systems.",
+    ],
+    link: "https://api-crafting-kit.vercel.app/",
+    image: "/img/docsProject.png",
   },
 ];
 
@@ -95,9 +136,14 @@ export default function Projects() {
       >
         Projects
       </motion.h2>
-
       {/* Projects List */}
-      <motion.div variants={container} className="space-y-1">
+      <motion.div
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        className="space-y-4"
+      >
         {projects.map((project, index) => {
           const isExpanded = expanded === index;
 
@@ -105,78 +151,82 @@ export default function Projects() {
             <motion.div
               key={index}
               variants={fadeScaleUp}
-              className="p-5 rounded-lg shadow-md bg-gray-50 hover:shadow-lg transition"
+              className="flex flex-col md:flex-row rounded-lg shadow-md bg-white hover:shadow-lg transition overflow-hidden"
             >
-              {/* Project Name */}
-              <motion.h3
-                variants={fadeSlideLeft}
-                className="font-semibold text-lg md:text-xl"
-              >
-                {project.name}
-              </motion.h3>
+              {/* Project Image */}
+              {project.image && (
+                <motion.div
+                  variants={fadeSlideLeft}
+                  className="md:w-1/3 w-full h-48 md:h-auto overflow-hidden"
+                >
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="w-full h-[10rem] object-cover hover:scale-105 transition-transform duration-500"
+                  />
+                </motion.div>
+              )}
 
-              {/* Date */}
-              <motion.p
-                variants={fadeSlideLeft}
-                className="text-sm text-gray-500"
-              >
-                {project.date}
-              </motion.p>
+              {/* Project Content */}
+              <div className="flex-1 p-5 flex flex-col justify-between">
+                {/* Title */}
+                <motion.h3
+                  variants={fadeSlideLeft}
+                  className="font-semibold text-lg md:text-xl text-gray-900"
+                >
+                  {project.name}
+                </motion.h3>
 
-              {/* Tech Stack */}
-              <motion.p
-                variants={fadeSlideLeft}
-                className="mt-2 text-sm text-gray-600"
-              >
-                {project.techStack}
-              </motion.p>
+                {/* Tech Stack */}
+                <motion.p
+                  variants={fadeSlideLeft}
+                  className="mt-1 text-sm text-gray-600"
+                >
+                  {project.techStack}
+                </motion.p>
 
-              {/* Expandable content */}
-              {isExpanded && (
-                <>
-                  {/* Description */}
+                {/* Expandable description */}
+                {isExpanded && (
                   <motion.ul
+                    variants={container}
                     initial="hidden"
                     animate="visible"
-                    variants={container}
-                    className="mt-3 list-disc pl-5 text-gray-700 space-y-1"
+                    className="mt-3 list-disc pl-5 text-gray-700 space-y-1 text-sm"
                   >
-                    {project.description.map((point, i) => (
+                    {project.description.map((point: string, i: number) => (
                       <motion.li key={i} variants={fadeSlideLeft}>
                         {point}
                       </motion.li>
                     ))}
                   </motion.ul>
-                </>
-              )}
-              <div className="flex items-center gap-3">
-                <motion.button
-                  onClick={() => toggleExpand(index)}
-                  className="mt-2 text-blue-600 hover:underline text-sm font-medium"
-                  variants={fadeSlideLeft}
+                )}
+
+                {/* Actions */}
+                <motion.div
+                  variants={container}
+                  className="flex items-center gap-3 mt-3"
                 >
-                  {isExpanded ? "See less" : "See more"}
-                </motion.button>
-                {/* Project Link */}
-                {project.link && (
-                  <motion.div
-                    initial="hidden"
-                    animate="visible"
+                  <motion.button
+                    onClick={() => toggleExpand(index)}
+                    className="text-blue-600 hover:underline text-sm font-medium"
                     variants={fadeSlideLeft}
-                    className="mt-3"
                   >
-                    <a
+                    {isExpanded ? "See less" : "See more"}
+                  </motion.button>
+
+                  {project.link && (
+                    <motion.a
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      variants={fadeSlideLeft}
                       className="inline-block text-sm bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition"
                     >
                       View Project
-                    </a>
-                  </motion.div>
-                )}
+                    </motion.a>
+                  )}
+                </motion.div>
               </div>
-              {/* Expand Button (always visible) */}
             </motion.div>
           );
         })}
