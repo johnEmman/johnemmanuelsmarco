@@ -179,7 +179,7 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="max-w-6xl mx-auto px-4">
+    <section id="projects" className="max-w-6xl mx-auto ">
       {/* Heading with fade + slide down */}
       <motion.h2
         className="text-lg font-bold border-b border-gray-300 pb-2 mb-6"

@@ -52,7 +52,7 @@ export default function App() {
           <div className="space-y-5">
             <p>
               {
-                " Hi! 👋 I&apos;m a Software Developer from the Philippines who loves turning ideas into reality through code."
+                " Hi! 👋 I'm a Software Developer from the Philippines who loves turning ideas into reality through code."
               }
             </p>
 
@@ -182,7 +182,7 @@ export default function App() {
             onClick={() => setShowGetInTouch(!showGetInTouch)}
             className="inline-flex text-center pt-8 cursor-pointer items-center text-blue-600 font-medium hover:underline"
           >
-            Get in Touch
+            {"Let's Work Togethere"}
             {showGetInTouch ? (
               <ChevronUp size={16} />
             ) : (
