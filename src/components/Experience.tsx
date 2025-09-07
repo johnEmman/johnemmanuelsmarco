@@ -50,7 +50,7 @@ export default function Experience() {
   };
 
   return (
-    <section className="  max-w-6xl mx-auto text-justify   pt-8  px-4">
+    <section className="  max-w-6xl mx-auto text-justify    px-4">
       <h2 className="text-lg   border-b border-gray-300 pb-2 mb-6  font-bold  text-gray-900 ">
         Experience
       </h2>

@@ -1,85 +1,42 @@
 "use client";
 
-import React from "react";
-import { motion, Variants } from "framer-motion";
-
-// --- Animation Variants ---
-const container: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.3, // sequential delay
-    },
-  },
-};
-
-const fadeSlideDown: Variants = {
-  hidden: { opacity: 0, y: -30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.3, ease: "easeOut" },
-  },
-};
-
-const fadeScaleUp: Variants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.3, ease: "easeOut" },
-  },
-};
-
-const fadeSlideLeft: Variants = {
-  hidden: { opacity: 0, x: -40 },
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.3, ease: "easeOut" },
-  },
-};
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export default function Footer() {
   return (
-    <motion.footer
-      id="contact"
-      className=" max-w-6xl mx-auto h-[40rem] flex flex-col gap-6 justify-center items-center px-6 text-center"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
-      variants={container}
-    >
-      {/* Heading */}
-      <motion.h2
-        variants={fadeSlideDown}
-        className="text-4xl md:text-6xl font-extrabold text-gray-900"
-      >
-        Get in Touch
-      </motion.h2>
+    <footer className="w-full border-t border-gray-200 bg-white mt-16">
+      <div className="max-w-5xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+        {/* Left side */}
+        <p className="text-sm text-gray-600">
+          © {new Date().getFullYear()} Emmanuel. All rights reserved.
+        </p>
 
-      {/* Subheading */}
-      <motion.p
-        variants={fadeScaleUp}
-        className="text-lg md:text-2xl text-gray-700 max-w-2xl"
-      >
-        Got an idea brewing? 💡 Let’s turn it into something awesome together.
-        Drop me an email — whether it’s a project, a collab, or just to say hi!
-      </motion.p>
-
-      {/* Contact details */}
-      <motion.div
-        variants={fadeSlideLeft}
-        className="flex flex-col md:flex-row gap-4 mt-6 text-gray-600"
-      >
-        <span className="text-base md:text-lg">📍 Manila, Philippines</span>
-        <a
-          href="mailto:ty.johnemmanuel@gmail.com"
-          className="text-base md:text-lg hover:text-blue-600 transition-colors"
-        >
-          ✉️ ty.johnemmanuel@gmail.com
-        </a>
-      </motion.div>
-    </motion.footer>
+        {/* Right side */}
+        <div className="flex gap-5">
+          <a
+            href="https://github.com/johnEmman"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-gray-900 transition"
+          >
+            <Github size={20} />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/john-emmanuel-marco-ba7558274/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-gray-900 transition"
+          >
+            <Linkedin size={20} />
+          </a>
+          <a
+            href="ty.johnemmanuel@gmail.com"
+            className="text-gray-500 hover:text-gray-900 transition"
+          >
+            <Mail size={20} />
+          </a>
+        </div>
+      </div>
+    </footer>
   );
 }

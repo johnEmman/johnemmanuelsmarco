@@ -23,14 +23,14 @@ function Pill({
 
 export default function Home() {
   return (
-    <div className="bg-white max-w-6xl mx-auto px-4 ">
+    <div className="max-w-4xl mx-auto px-4 pt-10">
       <div className="pt-[5rem]">
         <div className="md:col-span-7">
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl md:text-5xl font-extrabold tracking-tight bg-gradient-to-r from-slate-800 to-slate-500 bg-clip-text text-transparent"
+            className="text-4xl md:text-6xl font-extrabold tracking-tight bg-gradient-to-r from-slate-800 to-slate-500 bg-clip-text text-transparent"
           >
             John Emmanuel S. Marco
           </motion.h1>
