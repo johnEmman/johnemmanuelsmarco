@@ -8,36 +8,8 @@ import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
 import "animate.css";
+import { div } from "framer-motion/client";
 
 export default function App() {
-  return (
-    <>
-      <main className="px-7 lg:px-80 text-gray-950 font-sans bg-[#FFFFFF]">
-        <div id="home">
-          <Home />
-        </div>
-        <Header />
-
-        <div id="about">
-          <About />
-        </div>
-
-        <div>
-          <Skills />
-        </div>
-
-        <div id="experience">
-          <Experience />
-        </div>
-        <div>
-          <Education />
-        </div>
-
-        <div id="projects">
-          <Projects />
-        </div>
-        <Footer />
-      </main>
-    </>
-  );
+  return <div>hello</div>;
 }
