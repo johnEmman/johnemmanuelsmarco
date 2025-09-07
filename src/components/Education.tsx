@@ -44,7 +44,7 @@ export default function Education() {
   return (
     <motion.section
       id="education"
-      className="max-w-6xl mx-auto "
+      className="max-w-6xl mx-auto pb-8"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}
@@ -53,7 +53,7 @@ export default function Education() {
       {/* Heading */}
       <motion.h2
         variants={fadeSlideDown}
-        className="text-lg font-bold border-b border-gray-300 pb-2 mb-6"
+        className="text-lg font-bold border-b border-gray-300 pb-2 "
       >
         Education
       </motion.h2>

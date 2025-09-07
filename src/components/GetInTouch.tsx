@@ -111,7 +111,17 @@ export default function GetInTouch() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="flex flex-col md:flex-row gap-4 text-gray-600 mt-6 justify-center"
         >
-          <span className="text-base md:text-lg">📍 Manila, Philippines</span>
+          <span className="text-base md:text-lg">
+            <a
+              href="/cv/Marco_John_Emmanuel_S_cv.docx"
+              target="_blank"
+              rel="noopener noreferrer"
+              download
+              aria-label="Download CV"
+            >
+              📍 Download CV
+            </a>
+          </span>
           <a
             href="mailto:ty.johnemmanuel@gmail.com"
             className="text-base md:text-lg hover:text-blue-600 transition-colors"
@@ -121,34 +131,89 @@ export default function GetInTouch() {
         </motion.div>
 
         {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl mx-auto px-4 mt-10">
+        <div className="grid grid-cols-1  md:grid-cols-2 gap-8 w-full max-w-6xl mx-auto  mt-10">
           {/* Contact Form */}
           <motion.form
             onSubmit={handleSubmit}
             variants={fadeSlideLeft}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="bg-white rounded-2xl lg:p-8 flex flex-col h-full shadow-md"
+            className="bg-white rounded-2xl lg:p-4 flex flex-col  h-full shadow-md"
           >
-            <div className="flex-1 flex flex-col gap-4">
-              <input
-                type="email"
-                name="email"
-                value={form.email}
-                onChange={handleChange}
-                placeholder="Your email"
-                required
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
+            <div className="flex flex-col space-y-6">
+              {/* Email Field */}
+              <div className="group">
+                <label
+                  htmlFor="email"
+                  className="block text-start text-xl font-semibold  dark:text-gray-100 mb-2"
+                >
+                  Email Address
+                </label>
+                <div className="relative">
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder="you@example.com"
+                    required
+                    className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-200 dark:border-gray-700 
+                   bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100
+                   placeholder:text-gray-400 dark:placeholder:text-gray-500
+                   focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10
+                   transition-all duration-300 outline-none
+                   hover:border-gray-300 dark:hover:border-gray-600
+                   group-hover:shadow-sm"
+                  />
+                  <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                    <svg
+                      className="w-5 h-5 text-gray-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
 
-              <textarea
-                name="message"
-                value={form.message}
-                onChange={handleChange}
-                placeholder="Your message"
-                rows={6}
-                required
-                className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
-              />
+              {/* Message Field */}
+              <div className="group">
+                <div className="flex items-center justify-between mb-2">
+                  <label
+                    htmlFor="message"
+                    className="block text-xl  font-semibold dark:text-gray-100"
+                  >
+                    Message
+                  </label>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">
+                    {form.message?.length || 0}/500
+                  </span>
+                </div>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={form.message}
+                  onChange={handleChange}
+                  placeholder="Share your thoughts, questions, or project details..."
+                  rows={6}
+                  maxLength={500}
+                  required
+                  className="w-full px-4 py-3.5 rounded-xl border-2 border-gray-200 dark:border-gray-700 
+                 bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100
+                 placeholder:text-gray-400 dark:placeholder:text-gray-500
+                 focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10
+                 transition-all duration-300 outline-none resize-none
+                 hover:border-gray-300 dark:hover:border-gray-600
+                 group-hover:shadow-sm"
+                />
+              </div>
             </div>
 
             {/* Status Message */}

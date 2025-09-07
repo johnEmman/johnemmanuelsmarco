@@ -139,7 +139,7 @@ export default function AnimatedSkills() {
   return (
     <motion.section
       id="skills"
-      className=" max-w-6xl mx-auto  "
+      className=" max-w-6xl mx-auto pb-8 "
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.1 }}
