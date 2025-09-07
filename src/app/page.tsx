@@ -51,8 +51,9 @@ export default function App() {
           </motion.div>
           <div className="space-y-5">
             <p>
-              Hi! 👋 I'm a Software Developer from the Philippines who loves
-              turning ideas into reality through code.
+              {
+                " Hi! 👋 I&apos;m a Software Developer from the Philippines who loves turning ideas into reality through code."
+              }
             </p>
 
             <p>
