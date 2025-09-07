@@ -1,7 +1,5 @@
 "use client";
-import { CiLocationOn } from "react-icons/ci";
 import Home from "@/components/Home";
-import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Header from "@/components/Header";
@@ -9,7 +7,6 @@ import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import Footer from "@/components/Footer";
 import "animate.css";
-import { div } from "framer-motion/client";
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -24,12 +21,12 @@ export default function App() {
   const [showGetInTouch, setShowGetInTouch] = useState(false);
   return (
     <div>
-      <main className="px-7 lg:px-70 text-gray-950 font-sans bg-[#FFFFFF]">
+      <main className="px-7  lg:px-80 text-gray-950 font-sans bg-[#FFFFFF]">
         <div id="home">
           <Home />
         </div>
         <Header />
-        <section className="max-w-4xl mx-auto px-4 py-10 text-gray-800 leading-relaxed">
+        <section className="max-w-4xl text-justify mx-auto px-4 py-5 text-gray-800 leading-relaxed">
           {/* Profile Intro */}
           <motion.div
             className="flex items-center gap-4 mb-6"
@@ -60,8 +57,8 @@ export default function App() {
 
             <p>
               My developer journey started with curiosity — tweaking small
-              scripts, building little apps, and wondering *“what else can I
-              create?”*. Over time, that curiosity grew into{" "}
+              scripts, building little apps, and wondering “what else can I
+              create?”. Over time, that curiosity grew into{" "}
               <button
                 onClick={() => setShowSkills(!showSkills)}
                 className="inline-flex items-center text-blue-600 font-medium hover:underline"

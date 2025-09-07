@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { motion, Variants } from "framer-motion";
 
 // --- Animation Variants ---
@@ -8,7 +8,7 @@ const container: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.3, // sequential delay
+      staggerChildren: 0.3,
     },
   },
 };
@@ -41,10 +41,25 @@ const fadeSlideLeft: Variants = {
 };
 
 export default function GetInTouch() {
+  const [form, setForm] = useState({ email: "", message: "" });
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Form submitted:", form);
+    // TODO: Hook up to email service (Resend, Nodemailer, Formspree, etc.)
+    setForm({ email: "", message: "" });
+  };
+
   return (
     <motion.footer
       id="contact"
-      className=" max-w-6xl mx-auto h-[40rem] flex flex-col gap-6 justify-center items-center px-6 text-center"
+      className="max-w-6xl mx-auto h-[45rem] flex flex-col gap-6 justify-center items-center px-6 text-center"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: false, amount: 0.2 }}
@@ -80,6 +95,42 @@ export default function GetInTouch() {
           ✉️ ty.johnemmanuel@gmail.com
         </a>
       </motion.div>
+
+      {/* Contact Form */}
+      <motion.form
+        onSubmit={handleSubmit}
+        variants={fadeScaleUp}
+        className="mt-8 w-full max-w-lg flex flex-col gap-4 text-left"
+      >
+        <input
+          type="email"
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="Your email"
+          required
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        />
+
+        <textarea
+          name="message"
+          value={form.message}
+          onChange={handleChange}
+          placeholder="Your message"
+          rows={4}
+          required
+          className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+        />
+
+        <motion.button
+          type="submit"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="px-6 py-3 bg-blue-600 text-white font-semibold rounded-xl shadow hover:bg-blue-700 transition-colors"
+        >
+          Send Message
+        </motion.button>
+      </motion.form>
     </motion.footer>
   );
 }

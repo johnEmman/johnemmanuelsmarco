@@ -59,7 +59,7 @@ export default function Education() {
       </motion.h2>
 
       {/* Timeline */}
-      <div className="relative pl-5 flex flex-col gap-5">
+      <div className="relative  flex flex-col gap-5">
         {education.map((edu, index) => (
           <motion.div key={index} variants={fadeScaleUp} className="relative  ">
             {/* Timeline Dot */}
