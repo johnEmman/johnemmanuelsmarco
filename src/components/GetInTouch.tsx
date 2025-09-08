@@ -100,9 +100,8 @@ export default function GetInTouch() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-lg md:text-lg text-gray-700 max-w-2xl mx-auto mt-4"
         >
-          Got an idea brewing? 💡 Let’s turn it into something awesome together.
-          Drop me an email — whether it’s a project, a collab, or just to say
-          hi!
+          Got an idea brewing? 💡 Let’s turn it into something awesome. Drop me
+          an email — whether it’s a project, a collab, or just to say hi!
         </motion.p>
 
         {/* Contact Info */}
