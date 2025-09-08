@@ -91,7 +91,7 @@ export default function GetInTouch() {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-4xl md:text-6xl font-extrabold text-gray-900"
         >
-          Get in Touch
+          {"Let's Work Together"}
         </motion.h2>
 
         {/* Subheading */}

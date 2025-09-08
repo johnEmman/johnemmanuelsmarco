@@ -182,7 +182,7 @@ export default function App() {
             onClick={() => setShowGetInTouch(!showGetInTouch)}
             className="inline-flex text-center pt-8 cursor-pointer items-center text-blue-600 font-medium hover:underline"
           >
-            {"Let's Work Togethere"}
+            {"Get in Touch"}
             {showGetInTouch ? (
               <ChevronUp size={16} />
             ) : (
