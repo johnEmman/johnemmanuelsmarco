@@ -76,7 +76,7 @@ export default function GetInTouch() {
   return (
     <footer
       id="contact"
-      className="flex flex-col gap-6 justify-center items-center pt-8 text-center"
+      className="flex flex-col gap-6 justify-center  items-center pt-8 text-center"
     >
       <motion.div
         variants={staggerContainer}
@@ -89,7 +89,7 @@ export default function GetInTouch() {
         <motion.h2
           variants={fadeSlideDown}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="text-lg md:text-4xl font-extrabold text-gray-900"
+          className="text-2xl md:text-4xl font-extrabold text-gray-900"
         >
           {"Let's Work Together"}
         </motion.h2>
@@ -117,7 +117,7 @@ export default function GetInTouch() {
             rel="noopener noreferrer"
             download
             aria-label="Download CV"
-            className="flex items-center gap-2 px-5 py-3 rounded-xl border border-gray-200 shadow-sm 
+            className="flex items-center gap-2 px-3 py-1 rounded-xl border border-gray-200 shadow-sm 
                bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 
                transition-all duration-300 ease-out text-base md:text-lg font-medium"
           >
@@ -128,7 +128,7 @@ export default function GetInTouch() {
           {/* Email */}
           <a
             href="mailto:ty.johnemmanuel@gmail.com"
-            className="flex items-center gap-2 px-5 py-3 rounded-xl border border-gray-200 shadow-sm 
+            className="flex items-center gap-2 px-3 py-1 rounded-xl border border-gray-200 shadow-sm 
                bg-white text-gray-700 hover:bg-blue-50 hover:text-blue-600 
                transition-all duration-300 ease-out text-base md:text-lg font-medium"
           >
