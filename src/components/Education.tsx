@@ -59,14 +59,14 @@ export default function Education() {
       </motion.h2>
 
       {/* Timeline */}
-      <div className="relative  flex flex-col gap-5">
+      <div className="relative pt-3  flex flex-col ">
         {education.map((edu, index) => (
           <motion.div key={index} variants={fadeScaleUp} className="relative  ">
             {/* Timeline Dot */}
             {/* <span className="absolute -left-[10px] top-6 w-4 h-4 rounded-full bg-blue-500 border-2 border-white shadow"></span> */}
 
             {/* Card */}
-            <div className="bg-white  rounded-lg py-6 px-2  transition">
+            <div className="bg-white  rounded-lg py-3 px-2  transition">
               <div className="flex items-start gap-3">
                 {/* Logo */}
                 <img

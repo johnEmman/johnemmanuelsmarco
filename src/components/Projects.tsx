@@ -191,7 +191,7 @@ export default function Projects() {
         Projects
       </motion.h2>
 
-      {/* Container with staggered children */}
+      {/* Compact Project List */}
       <motion.div
         className="space-y-4"
         variants={containerVariants}
@@ -205,35 +205,37 @@ export default function Projects() {
           return (
             <motion.div
               key={index}
-              className="flex items-start gap-4 rounded-md border border-gray-200 bg-white p-4 shadow-sm hover:shadow transition"
+              className="flex items-start gap-3 rounded-lg border border-gray-200 bg-white p-3 
+                   shadow-sm hover:shadow-md hover:border-blue-400 transition-all duration-300"
               variants={fadeScaleUp}
+              whileHover={{ scale: 1.005 }}
             >
-              {/* Thumbnail Image with slide in */}
+              {/* Thumbnail */}
               {project.image && (
                 <motion.div
-                  className="w-24 h-24 flex-shrink-0 overflow-hidden rounded-md"
+                  className="w-20 h-20 flex-shrink-0 overflow-hidden rounded-md ring-1 ring-gray-200"
                   variants={fadeSlideLeft}
                 >
                   <img
                     src={project.image}
                     alt={project.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </motion.div>
               )}
 
               {/* Content */}
               <motion.div className="flex-1" variants={fadeSlideLeft}>
-                <h3 className="font-semibold text-gray-900 text-base md:text-lg">
+                <h3 className="font-semibold text-gray-900 text-sm md:text-base leading-snug">
                   {project.name}
                 </h3>
-                <p className="text-xs md:text-sm text-gray-600">
+                <p className="text-xs text-gray-500 mb-1">
                   {project.techStack}
                 </p>
 
                 {/* Expandable description */}
                 {isExpanded && (
-                  <ul className="mt-2 list-disc pl-5 text-sm text-gray-700 space-y-1">
+                  <ul className="mt-1 list-disc pl-4 text-gray-700 space-y-0.5 text-xs leading-relaxed">
                     {project.description.map((point, i) => (
                       <li key={i}>{point}</li>
                     ))}
@@ -241,11 +243,11 @@ export default function Projects() {
                 )}
 
                 {/* Actions */}
-                <div className="mt-2 flex items-center gap-3">
+                <div className="mt-1.5 flex items-center gap-2">
                   {project.description.length > 0 && (
                     <button
                       onClick={() => toggleExpand(index)}
-                      className="text-xs text-blue-600 hover:underline"
+                      className="text-xs font-medium text-blue-600 hover:text-blue-700 transition"
                     >
                       {isExpanded ? "See less" : "See more"}
                     </button>
@@ -256,7 +258,8 @@ export default function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-xs bg-blue-600 text-white px-2 py-1 rounded hover:bg-blue-700 transition"
+                      className="text-xs px-2 py-1 rounded-full bg-blue-600 text-white 
+                           hover:bg-blue-700 transition-colors"
                     >
                       View
                     </a>

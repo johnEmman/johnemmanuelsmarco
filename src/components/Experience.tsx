@@ -110,7 +110,7 @@ export default function Experience() {
                   <AnimatePresence>
                     {(isExpanded
                       ? exp.description
-                      : exp.description.slice(0, 1)
+                      : exp.description.slice(0, 0)
                     ).map((point, i) => (
                       <motion.li
                         key={i}
