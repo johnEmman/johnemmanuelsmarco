@@ -156,7 +156,7 @@ export default function AnimatedSkills() {
       {/* Subheading */}
       <motion.p
         variants={fadeScaleUp}
-        className="text-gray-700  text-base md:text-lg max-w-3xl"
+        className="text-gray-700  text-base md:text-md max-w-3xl"
       >
         A quick glance at the tools and technologies I use day to day.
       </motion.p>
@@ -166,12 +166,12 @@ export default function AnimatedSkills() {
         {skills.map((skillGroup, index) => (
           <motion.div key={index} variants={fadeSlideLeft} className="pl-3 p-1">
             {/* Category */}
-            <h3 className="font-semibold text-gray-900 mb-1 text-lg">
+            <h3 className="font-semibold text-gray-900 mb-1 text-md">
               {skillGroup.category}
             </h3>
 
             {/* Skill pills */}
-            <ul className="flex flex-wrap gap-2 text-xs md:text-sm text-gray-800">
+            <ul className="flex flex-wrap gap-2 text-xs md:text-xs text-gray-800">
               {skillGroup.items.map((item, i) => (
                 <li
                   key={i}

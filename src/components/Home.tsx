@@ -44,7 +44,7 @@ export default function Home() {
           </p>
 
           {/* ✅ Pills section */}
-          <div className="mt-2 flex flex-wrap gap-3">
+          <div className="mt-4 flex flex-wrap gap-3">
             <Pill>
               <Code2 className="h-4 text-red-500 w-4" /> Full-Stack (React ·
               Node)

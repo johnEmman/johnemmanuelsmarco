@@ -78,7 +78,7 @@ export default function Education() {
                 {/* School Info */}
                 <div className="lg:flex justify-between w-full ">
                   <div>
-                    <h3 className="font-semibold text-lg">{edu.degree}</h3>
+                    <h3 className="font-semibold text-md">{edu.degree}</h3>
                     <p className="text-sm text-gray-600">{edu.school}</p>
                   </div>
                   <div>

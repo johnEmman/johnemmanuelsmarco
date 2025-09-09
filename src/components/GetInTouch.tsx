@@ -273,7 +273,7 @@ export default function GetInTouch() {
           <motion.div
             variants={fadeScaleUp}
             transition={{ duration: 0.6, ease: "easeOut" }}
-            className="bg-white rounded-lg p-3 max-w-xs w-full text-left shadow-sm"
+            className="bg-white rounded-lg  p-3  w-full text-left shadow-sm"
           >
             <h2 className="text-base font-semibold mb-3">Why Choose Me</h2>
             <div className="space-y-8 text-xs">

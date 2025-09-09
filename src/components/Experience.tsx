@@ -15,7 +15,7 @@ interface ExperienceItem {
 const experiences: ExperienceItem[] = [
   {
     img: "https://media.licdn.com/dms/image/v2/D560BAQFVDj2BfpOc-A/company-logo_200_200/company-logo_200_200/0/1698729536883/spmadrid_logo?e=1758758400&v=beta&t=byd-nhowHNiEd-HT4QRhNQIH31PCdTIN3QDhE3a0_3Q",
-    role: "Intern Software Developer & QA Tester | Innovation Technology",
+    role: "Intern Software Developer | Innovation Technology",
     company: "SP Madrid & Associates",
     date: "Oct 2024 – Dec 2024",
     location: "PITX Parañaque City",
@@ -96,7 +96,7 @@ export default function Experience() {
                     className="md:h-12 h-[4rem] rounded-full"
                   />
                   <div>
-                    <h3 className="text-lg font-semibold">{exp.role}</h3>
+                    <h3 className="text-md font-semibold">{exp.role}</h3>
                     <p className="text-gray-700 font-medium">{exp.company}</p>
                   </div>
                 </div>
