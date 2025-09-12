@@ -21,7 +21,7 @@ export default function App() {
   const [showGetInTouch, setShowGetInTouch] = useState(false);
   return (
     <div>
-      <main className="px-7  lg:px-80 text-gray-950 font-sans bg-[#FFFFFF]">
+      <main className="px-7  lg:px-60 text-gray-950 font-sans bg-[#FFFFFF]">
         <div id="home">
           <Home />
         </div>
